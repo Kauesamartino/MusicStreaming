@@ -28,38 +28,58 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Artistas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJ0aXN0YXNcSW5kZXguY3NodG1s
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Artistas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0YXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Artistas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0YXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Artistas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0YXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Musicas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXVzaWNhc1xJbmRleC5jc2h0bWw=
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Artistas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0YXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Artistas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0YXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Musicas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Musicas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-1es1mbehhc
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Musicas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Musicas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Musicas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/Shared/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaue_/source/repos/MusicStreaming/MusicStreaming/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

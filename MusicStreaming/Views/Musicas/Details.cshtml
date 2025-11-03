@@ -1,0 +1,31 @@
+﻿@model MusicStreaming.Models.Musica
+
+@{
+    ViewData["Title"] = "Detalhes da Música";
+}
+
+<h1>Detalhes da Música</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Título</dt>
+        <dd class="col-sm-10">@Model.Titulo</dd>
+
+        <dt class="col-sm-2">Gênero</dt>
+        <dd class="col-sm-10">@Model.Genero</dd>
+
+        <dt class="col-sm-2">Duração</dt>
+        <dd class="col-sm-10">@Model.Duracao min</dd>
+
+        <dt class="col-sm-2">Data de Lançamento</dt>
+        <dd class="col-sm-10">@Model.DataLancamento.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Artista</dt>
+        <dd class="col-sm-10">@Model.Artista?.Nome</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</p>

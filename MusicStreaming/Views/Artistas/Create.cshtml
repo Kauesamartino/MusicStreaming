@@ -1,0 +1,22 @@
+﻿@model MusicStreaming.Models.Artista
+
+@{
+    ViewData["Title"] = "Adicionar Artista";
+}
+
+<h1>Adicionar Artista</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Sobrenome" class="form-label"></label>
+        <input asp-for="Sobrenome" class="form-control" />
+        <span asp-validation-for="Sobrenome" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</form>

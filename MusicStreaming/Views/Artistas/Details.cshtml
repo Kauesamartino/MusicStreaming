@@ -1,0 +1,22 @@
+﻿@model MusicStreaming.Models.Artista
+
+@{
+    ViewData["Title"] = "Detalhes do Artista";
+}
+
+<h1>Detalhes do Artista</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Nome</dd>
+
+        <dt class="col-sm-2">Sobrenome</dt>
+        <dd class="col-sm-10">@Model.Sobrenome</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</p>

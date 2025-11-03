@@ -3,42 +3,42 @@ using MusicStreaming.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-builder.Services.AddControllers();
+// MVC
+builder.Services.AddControllersWithViews();
 
-// Swagger (Swashbuckle)
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// DbContext (SQLite) - usa connection string em appsettings ou fallback
+// SQLite
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                       ?? "Data Source=musicstream.db";
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(); // agora reconhecido após instalar Swashbuckle
+    app.UseSwaggerUI();
 }
 else
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
-app.MapRazorPages();
-app.MapControllers();
+// Rota padrão MVC
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

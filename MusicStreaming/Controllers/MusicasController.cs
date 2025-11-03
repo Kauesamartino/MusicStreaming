@@ -1,14 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MusicStreaming.Context;
 using MusicStreaming.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace MusicStreaming.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class MusicasController : Controller
     {
         private readonly AppDbContext _context;
@@ -18,51 +15,112 @@ namespace MusicStreaming.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Musica>>> GetMusicas()
+        public async Task<IActionResult> Index(string search)
         {
-            return await _context.Musicas
-                .Include(m => m.Artista)
-                .ToListAsync();
+            var musicas = _context.Musicas.Include(m => m.Artista).AsQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+                musicas = musicas.Where(m => m.Titulo.Contains(search));
+
+            ViewData["CurrentFilter"] = search; // <- aqui guardamos o valor
+            return View(await musicas.ToListAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Musica>> GetMusica(int id)
+        public async Task<IActionResult> Details(int? id)
         {
+            if (id == null) return NotFound();
+
             var musica = await _context.Musicas
                 .Include(m => m.Artista)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (musica == null)
-                return NotFound();
+            if (musica == null) return NotFound();
 
-            return musica;
+            return View(musica);
+        }
+
+        public IActionResult Create()
+        {
+            ViewData["ArtistaId"] = new SelectList(_context.Artistas, "Id", "Nome");
+            return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult<Musica>> PostMusica(Musica musica)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Musica musica)
         {
-            var artista = await _context.Artistas.FindAsync(musica.ArtistaId);
-            if (artista == null)
-                return BadRequest("Artista não encontrado.");
+            if (ModelState.IsValid)
+            {
+                _context.Add(musica);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
 
-            _context.Musicas.Add(musica);
-            await _context.SaveChangesAsync();
+            ViewData["ArtistaId"] = new SelectList(_context.Artistas, "Id", "Nome", musica.ArtistaId);
+            return View(musica);
+        }
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
 
-            return CreatedAtAction(nameof(GetMusica), new { id = musica.Id }, musica);
+            var musica = await _context.Musicas.FindAsync(id);
+            if (musica == null) return NotFound();
+
+            ViewData["ArtistaId"] = new SelectList(_context.Artistas, "Id", "Nome", musica.ArtistaId);
+            return View(musica);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMusica(int id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Musica musica)
+        {
+            if (id != musica.Id) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(musica);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewData["ArtistaId"] = new SelectList(_context.Artistas, "Id", "Nome", musica.ArtistaId);
+            return View(musica);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var musica = await _context.Musicas
+                .Include(m => m.Artista)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (musica == null) return NotFound();
+
+            return View(musica);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var musica = await _context.Musicas.FindAsync(id);
-            if (musica == null)
-                return NotFound();
-
-            _context.Musicas.Remove(musica);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            if (musica != null)
+            {
+                _context.Musicas.Remove(musica);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var musica = await _context.Musicas
+                                .Include(m => m.Artista)
+                                .FirstOrDefaultAsync(m => m.Id == id);
+            if (musica == null) return NotFound();
+            return View(musica);
+        }
+
     }
 }
